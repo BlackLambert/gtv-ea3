@@ -1,0 +1,9 @@
+#wgl-canvas
+{
+    margin: 50px -50% 0px 0px;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    position: relative;
+    transform: translate(-50%, 0)
+}
