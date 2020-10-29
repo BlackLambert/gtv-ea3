@@ -307,7 +307,24 @@ function initView()
     gl.enable(gl.DEPTH_TEST);
     gl.clearColor(clearColor[0], clearColor[1], clearColor[2], clearColor[3]);
     gl.clear(gl.COLOR_BUFFER_BIT);
-    gl.viewport(0,0,canvas.width,canvas.height);
+    resizeCanvas(gl.canvas)
+    gl.viewport(0,0,gl.canvas.width,gl.canvas.height);
+}
+
+// Source: https://webglfundamentals.org/webgl/lessons/webgl-resizing-the-canvas.html
+function resizeCanvas(canvas)
+{
+    var displayWidth  = canvas.clientWidth;
+    var displayHeight = canvas.clientHeight;
+   
+    // Check if the canvas is not the same size.
+    if (canvas.width  != displayWidth ||
+        canvas.height != displayHeight) {
+   
+      // Make the canvas the same size
+      canvas.width  = displayWidth;
+      canvas.height = displayHeight;
+    }
 }
 
 function draw()
